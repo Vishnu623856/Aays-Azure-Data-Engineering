@@ -1,13 +1,11 @@
 from pathlib import Path
 import pandas as pd
 
-
 DATA_DIR = Path(__file__).resolve().parent.parent / "Data"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
 
 
 def load_sales():
-    """Load all yearly sales files into one dataframe."""
-
     files = [
         DATA_DIR / "AdventureWorks_Sales_2015.csv",
         DATA_DIR / "AdventureWorks_Sales_2016.csv",
@@ -23,8 +21,6 @@ def load_sales():
 
 
 def transform_sales(sales):
-    """Clean and enrich the sales dataset."""
-
     sales["OrderDate"] = pd.to_datetime(sales["OrderDate"])
     sales["StockDate"] = pd.to_datetime(sales["StockDate"])
 
@@ -39,8 +35,6 @@ def transform_sales(sales):
 
 
 def validate_sales(sales):
-    """Run basic data-quality checks."""
-
     checks = {
         "No missing OrderNumber": sales["OrderNumber"].notna().all(),
         "No missing ProductKey": sales["ProductKey"].notna().all(),
@@ -58,6 +52,17 @@ def validate_sales(sales):
     return all(checks.values())
 
 
+def save_sales(sales):
+    OUTPUT_DIR.mkdir(exist_ok=True)
+
+    output_file = OUTPUT_DIR / "sales_transformed.csv"
+
+    sales.to_csv(output_file, index=False)
+
+    print(f"\nTransformed data saved to: {output_file}")
+    print(f"Output records: {len(sales):,}")
+
+
 def main():
     print("Loading sales data...")
 
@@ -65,28 +70,16 @@ def main():
 
     print(f"Total sales records: {len(sales):,}")
 
+    print("\nTransforming sales data...")
+
     sales = transform_sales(sales)
 
     if not validate_sales(sales):
         raise ValueError("Data quality validation failed.")
 
-    print("\nTransformation completed successfully.")
+    save_sales(sales)
 
-    print("\nSample transformed data:")
-    print(
-        sales[
-            [
-                "OrderNumber",
-                "OrderDate",
-                "ProductKey",
-                "CustomerKey",
-                "OrderQuantity",
-                "OrderYear",
-                "OrderMonth",
-                "LineQuantity",
-            ]
-        ].head()
-    )
+    print("\nETL pipeline completed successfully.")
 
 
 if __name__ == "__main__":
