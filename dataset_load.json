@@ -1,0 +1,52 @@
+[
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Calendar.csv",
+    "p_sink_folder": "Calender",
+    "p_sink_files": "Calender.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Customers.csv",
+    "p_sink_folder": "Customers",
+    "p_sink_files": "Customers.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Product_Categories.csv",
+    "p_sink_folder": "Product_Categories",
+    "p_sink_files": "Product_Categories.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Product_Subcategories.csv",
+    "p_sink_folder": "Product_Subcategories",
+    "p_sink_files": "Product_Subcategories.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Products.csv",
+    "p_sink_folder": "Products",
+    "p_sink_files": "Products.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Returns.csv",
+    "p_sink_folder": "Returns",
+    "p_sink_files": "Returns.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Sales_2015.csv",
+    "p_sink_folder": "Sales_2015",
+    "p_sink_files": "Sales_2015.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Sales_2016.csv",
+    "p_sink_folder": "Sales_2016",
+    "p_sink_files": "Sales_2016.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Sales_2017.csv",
+    "p_sink_folder": "Sales_2017",
+    "p_sink_files": "Sales_2017.csv"
+  },
+  {
+    "p_relative_url": "YOUR_DATA_SOURCE_REPO/AdventureWorks_Territories.csv",
+    "p_sink_folder": "Territories",
+    "p_sink_files": "Territories.csv"
+  }
+]
