@@ -1,7 +1,22 @@
 # Aays Azure Data Engineering Project
 
 End-to-end Azure data engineering project based on the AdventureWorks sales dataset.
-
+AdventureWorks CSV
+       ↓
+Azure Data Factory
+       ↓
+ADLS Gen2
+       ↓
+Bronze
+       ↓
+Databricks / PySpark
+       ↓
+Silver
+       ↓
+Gold
+   ↙       ↘
+Synapse    Streamlit
+SQL        Dashboard
 ## Project Overview
 
 This project demonstrates a complete data engineering workflow using Python, PySpark, Azure Data Factory, Azure Data Lake Storage Gen2, Azure Databricks, Azure Synapse Analytics, SQL, and Streamlit.
